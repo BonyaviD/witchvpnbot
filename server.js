@@ -1,16 +1,16 @@
 require('dotenv').config()
 const TelegramBot = require("node-telegram-bot-api");
 const token = process.env.TOKEN;
-const bot = new TelegramBot(token, { polling: true });
+const bot = new TelegramBot(token, {polling: true});
 
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(
     msg.chat.id,
-    " سلام " + msg.chat.first_name + " به ربات ما خوش آمدید  ",
+    " سلام " + msg.chat.first_name + " به ربات خوش آمدید",
     {
       reply_markup: {
         keyboard: [
-          ["خرید"],
+          ["خرید", "حجم اکانت"],
           ["گزارش اکانت", "سوالات متداول", "آموزش"],
           ["پشتیبانی"],
         ],
@@ -24,6 +24,9 @@ bot.on("message", (msg) => {
   switch (msg.text) {
     case "خرید":
       bot.sendMessage(msg.chat.id, "حاوی یک لینک خرید");
+      break;
+    case "حجم اکانت":
+      bot.sendMessage(msg.chat.id, "ایمیل خود را وارد کنید");
       break;
     case "آموزش":
       bot.sendMessage(msg.chat.id, " دیوایس مورد نظر را انتخاب کنید", {
