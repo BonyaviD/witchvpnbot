@@ -1,0 +1,13 @@
+{
+    "name": "witch-vpn",
+    "version": "1.0.0",
+    "lockfileVersion": 2,
+    "requires": true,
+    "packages": {
+      "": {
+        "name": "witch-vpn",
+        "version": "1.0.0",
+        "license": "ISC",
+        "dependencies": {
+          "node-telegram-bot-api": "^0.60.0"
+        }}}}
