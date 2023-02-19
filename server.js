@@ -1,4 +1,3 @@
-require('dotenv').config()
 const TelegramBot = require("node-telegram-bot-api");
 const token = process.env.TOKEN;
 const bot = new TelegramBot(token, {polling: true});
@@ -52,7 +51,7 @@ bot.on("message", (msg) => {
         {
           reply_markup: {
             keyboard: [
-              ["خرید"],
+              ["خرید", "حجم اکانت"],
               ["گزارش اکانت", "سوالات متداول", "آموزش"],
               ["پشتیبانی"],
             ],
@@ -75,5 +74,3 @@ bot.on("message", (msg) => {
       break;
   }
 });
-
-console.log("server is running")
