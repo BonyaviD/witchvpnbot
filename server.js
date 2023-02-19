@@ -2,7 +2,7 @@ require('dotenv').config()
 const TelegramBot = require("node-telegram-bot-api");
 const token = process.env.TOKEN;
 const bot = new TelegramBot(token, { polling: true });
-console.log(process.env.TOKEN)
+
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(
     msg.chat.id,
@@ -72,3 +72,5 @@ bot.on("message", (msg) => {
       break;
   }
 });
+
+console.log("server is running")
