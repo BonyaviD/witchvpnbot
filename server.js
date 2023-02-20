@@ -15,10 +15,10 @@ bot.on("message", (msg) => {
     bot.sendMessage(msg.chat.id, `منتظر بمانید...`)
 
     axios.post("https://witch.gndn.cf/api/v2/account", {
-      "email": msg.text, "passwd": "*4%js%CBnJ^"
+      "email": msg.text, "passwd": process.env.USER_PASSWORD
     }, {
       headers: {
-        'XMPus-API-Token': '76841732e7f9261ebb995d32e3c68640'
+        'XMPus-API-Token': process.env.API_TOKEN
       }
     }).then((res) => {
       bot.sendMessage(msg.chat.id, `حجم باقی مانده: ${res.data?.data?.traffic.remaining}`)
