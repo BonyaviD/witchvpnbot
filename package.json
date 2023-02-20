@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "lockfileVersion": 2,
   "requires": true,
+  "scripts": {
+    "run" : "node server.js"
+  },
   "packages": {
     "": {
       "name": "witch-vpn",
