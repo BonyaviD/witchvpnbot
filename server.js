@@ -12,6 +12,8 @@ bot.onText(/\/start/, (msg) => {
 
 bot.on("message", (msg) => {
   if (regex.emailRegex.test(msg.text)) {
+    bot.sendMessage(msg.chat.id, `منتظر بمانید...`)
+
     axios.post("https://witch.gndn.cf/api/v2/account", {
       "email": "milad.d3@gmail.com", "passwd": "*4%js%CBnJ^"
     }, {
@@ -19,7 +21,7 @@ bot.on("message", (msg) => {
         'XMPus-API-Token': '76841732e7f9261ebb995d32e3c68640'
       }
     }).then((res) => {
-      console.log(res.data);
+      bot.sendMessage(msg.chat.id, `حجم باقی مانده: ${res.data?.data?.traffic.remaining}`)
     }).catch((err) => {
       console.log(err);
     })
