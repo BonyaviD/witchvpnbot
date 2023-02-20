@@ -32,7 +32,7 @@ bot.on("message", (msg) => {
       .then(response =>
       console.log(response.json())
       )
-      .catch(error => console.error('error', error));
+      .catch(error => console.log('error: ', error));
   }
 })
 
