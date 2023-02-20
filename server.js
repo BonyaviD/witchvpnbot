@@ -21,8 +21,12 @@ bot.on("message", (msg) => {
         'XMPus-API-Token': process.env.API_TOKEN
       }
     }).then((res) => {
-      bot.sendMessage(msg.chat.id, `حجم باقی مانده: ${res.data?.data?.traffic.remaining}`)
+      if (res.data?.data?.traffic?.remaining)
+        bot.sendMessage(msg.chat.id, `حجم باقی مانده: ${res.data?.data?.traffic.remaining}`)
+      else
+        bot.sendMessage(msg.chat.id, `ایمیل پیدا نشد`)
     }).catch((err) => {
+      bot.sendMessage(msg.chat.id, `ایمیل پیدا نشد`)
       console.log(err);
     })
   }
