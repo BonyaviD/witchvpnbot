@@ -1,6 +1,7 @@
 const TelegramBot = require("node-telegram-bot-api");
 const token = process.env.TOKEN;
 const bot = new TelegramBot(token, {polling: true});
+import {PANEL_FORM} from "./consts";
 
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(msg.chat.id, " سلام " + msg.chat.first_name + " لطفا ایمیل خود را وارد کنید",)
@@ -8,14 +9,7 @@ bot.onText(/\/start/, (msg) => {
 
 bot.on("message", (msg) => {
   if (msg.text === "email")
-    bot.sendMessage(msg.chat.id, "به پنل خوش آمدید",
-    {
-      reply_markup: {
-        keyboard: [["وضعیت اکانت"],
-          ["پشتیبانی", "آموزش", "خرید"]],
-        resize_keyboard: true,
-      },
-    })
+    bot.sendMessage(msg.chat.id, "به پنل خوش آمدید", PANEL_FORM)
   else if (msg.text !== "/start"
     && msg.text !== "email"
     && msg.text !== "وضعیت اکانت"
@@ -27,7 +21,6 @@ bot.on("message", (msg) => {
     && msg.text !== "Android"
     && msg.text !== "بازگشت")
     bot.sendMessage(msg.chat.id, "ایمیل یافت نشد")
-
 })
 
 bot.on("message", (msg) => {
@@ -63,13 +56,7 @@ bot.on("message", (msg) => {
       bot.sendMessage(
         msg.chat.id,
         " کاربر " + msg.chat.first_name + " گزینه‌ی مورد نظر را انتخاب کنید ",
-        {
-          reply_markup: {
-            keyboard: [["وضعیت اکانت"],
-              ["پشتیبانی", "آموزش", "خرید"]],
-            resize_keyboard: true,
-          },
-        }
+        PANEL_FORM,
       );
       break;
   }
