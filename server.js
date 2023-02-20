@@ -3,26 +3,40 @@ const TelegramBot = require("node-telegram-bot-api");
 const token = process.env.TOKEN;
 const bot = new TelegramBot(token, {polling: true});
 const consts = require("./consts");
+const regex = require("./utils/regex");
 
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(msg.chat.id, " سلام " + msg.chat.first_name + " لطفا ایمیل خود را وارد کنید",)
 });
 
 bot.on("message", (msg) => {
-  if (msg.text === "email")
-    bot.sendMessage(msg.chat.id, "به پنل خوش آمدید", consts.PANEL_FORM)
-  else if (msg.text !== "/start"
-    && msg.text !== "email"
-    && msg.text !== "وضعیت اکانت"
-    && msg.text !== "خرید"
-    && msg.text !== "آموزش"
-    && msg.text !== "پشتیبانی"
-    && msg.text !== "iOS"
-    && msg.text !== "Windows"
-    && msg.text !== "Android"
-    && msg.text !== "بازگشت")
-    bot.sendMessage(msg.chat.id, "ایمیل یافت نشد")
+  if(regex.emailRegex.test(msg.text)){
+    var myHeaders = new Headers();
+    myHeaders.append("XMPus-API-Token", "76841732e7f9261ebb995d32e3c68640");
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Cookie", "app=rtbc6or759c7csuk6pt1di3ru6");
+
+    var raw = JSON.stringify({
+      "email": "milad.d3@gmail.com",
+      "passwd": "*4%js%CBnJ^"
+    });
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("https://witch.gndn.cf/api/v2/account", requestOptions)
+      .then(response =>
+      console.log(response.json())
+      )
+      .catch(error => console.error('error', error));
+  }
 })
+
+
 
 bot.on("message", (msg) => {
   switch (msg.text) {
