@@ -36,7 +36,7 @@ bot.on("message", (msg) => {
   }
 })
 
-
+bot.on("polling_error", console.log);
 
 bot.on("message", (msg) => {
   switch (msg.text) {
