@@ -13,14 +13,16 @@ bot.onText(/\/start/, (msg) => {
 bot.on("message", (msg) => {
   if (regex.emailRegex.test(msg.text)) {
     axios.post("https://witch.gndn.cf/api/v2/account", {
-        "email": "milad.d3@gmail.com",
-        "passwd": "*4%js%CBnJ^"
-      },
-      {
-        headers: {
-          'XMPus-API-Token': '76841732e7f9261ebb995d32e3c68640'
-        }
-      })
+      "email": "milad.d3@gmail.com", "passwd": "*4%js%CBnJ^"
+    }, {
+      headers: {
+        'XMPus-API-Token': '76841732e7f9261ebb995d32e3c68640'
+      }
+    }).then((res) => {
+      console.log(res.data);
+    }).catch((err) => {
+      console.log(err);
+    })
   }
 })
 
@@ -38,13 +40,11 @@ bot.on("message", (msg) => {
       bot.sendMessage(msg.chat.id, "  لینک تلگرام برای پشتیبانی");
       break;
     case "آموزش":
-      bot.sendMessage(msg.chat.id, "لطفا سیستم عام خود رو انتخاب کنید",
-        {
-          reply_markup: {
-            keyboard: [["Windows", "Android", "iOS"], ["بازگشت"]],
-            resize_keyboard: true,
-          },
-        });
+      bot.sendMessage(msg.chat.id, "لطفا سیستم عام خود رو انتخاب کنید", {
+        reply_markup: {
+          keyboard: [["Windows", "Android", "iOS"], ["بازگشت"]], resize_keyboard: true,
+        },
+      });
       break;
     case "iOS":
       bot.sendMessage(msg.chat.id, "توضیحات آیفون");
@@ -56,11 +56,7 @@ bot.on("message", (msg) => {
       bot.sendMessage(msg.chat.id, "توضیحات اندروید");
       break;
     case "بازگشت":
-      bot.sendMessage(
-        msg.chat.id,
-        " کاربر " + msg.chat.first_name + " گزینه‌ی مورد نظر را انتخاب کنید ",
-        consts.PANEL_FORM,
-      );
+      bot.sendMessage(msg.chat.id, " کاربر " + msg.chat.first_name + " گزینه‌ی مورد نظر را انتخاب کنید ", consts.PANEL_FORM,);
       break;
   }
 })
