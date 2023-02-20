@@ -15,7 +15,7 @@ bot.on("message", (msg) => {
     bot.sendMessage(msg.chat.id, `منتظر بمانید...`)
 
     axios.post("https://witch.gndn.cf/api/v2/account", {
-      "email": "milad.d3@gmail.com", "passwd": "*4%js%CBnJ^"
+      "email": msg.text, "passwd": "*4%js%CBnJ^"
     }, {
       headers: {
         'XMPus-API-Token': '76841732e7f9261ebb995d32e3c68640'
