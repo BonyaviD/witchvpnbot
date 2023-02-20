@@ -2,7 +2,7 @@ require('dotenv').config() // don't delete it navid
 const TelegramBot = require("node-telegram-bot-api");
 const token = process.env.TOKEN;
 const bot = new TelegramBot(token, {polling: true});
-import {PANEL_FORM} from "./consts";
+const consts = require("./consts");
 
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(msg.chat.id, " سلام " + msg.chat.first_name + " لطفا ایمیل خود را وارد کنید",)
@@ -10,7 +10,7 @@ bot.onText(/\/start/, (msg) => {
 
 bot.on("message", (msg) => {
   if (msg.text === "email")
-    bot.sendMessage(msg.chat.id, "به پنل خوش آمدید", PANEL_FORM)
+    bot.sendMessage(msg.chat.id, "به پنل خوش آمدید", consts.PANEL_FORM)
   else if (msg.text !== "/start"
     && msg.text !== "email"
     && msg.text !== "وضعیت اکانت"
@@ -57,7 +57,7 @@ bot.on("message", (msg) => {
       bot.sendMessage(
         msg.chat.id,
         " کاربر " + msg.chat.first_name + " گزینه‌ی مورد نظر را انتخاب کنید ",
-        PANEL_FORM,
+        consts.PANEL_FORM,
       );
       break;
   }
