@@ -72,7 +72,6 @@ bot.on("message", (msg) => {
           bot.sendMessage(msg.chat.id, `ایمیل خود را وارد کنید`);
         }
       })
-      bot.sendMessage(msg.chat.id, "  ایمیل خود را وارد کنید ");
       break;
     case "خرید":
       bot.sendMessage(msg.chat.id, "  لینک خرید  ");
