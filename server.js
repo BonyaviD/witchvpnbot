@@ -4,7 +4,7 @@ const token = process.env.TOKEN;
 const bot = new TelegramBot(token, {polling: true});
 const consts = require("./consts");
 const regex = require("./utils/regex");
-
+const Chat = require("./model/chatModel");
 const axios = require("axios");
 
 bot.onText(/\/start/, (msg) => {
@@ -22,31 +22,36 @@ bot.onText(/\/start/, (msg) => {
   );
 });
 
-bot.on("message", (msg) => {
-  if (regex.emailRegex.test(msg.text)) {
-    bot.sendMessage(msg.chat.id, `منتظر بمانید...`)
-
-    axios.post("https://witch.gndn.cf/api/v2/account", {
-      "email": msg.text, "passwd": process.env.USER_PASSWORD
-    }, {
-      headers: {
-        'XMPus-API-Token': process.env.API_TOKEN
-      }
-    }).then((res) => {
-      if (res.data?.data?.traffic?.remaining)
-        bot.sendMessage(msg.chat.id,
-          `
+function requestAccount(emailEntered, msg) {
+  axios.post("https://witch.gndn.cf/api/v2/account", {
+    "email": emailEntered,
+    "passwd": process.env.USER_PASSWORD
+  }, {
+    headers: {
+      'XMPus-API-Token': process.env.API_TOKEN
+    }
+  }).then((res) => {
+    if (res.data?.data?.traffic?.remaining) {
+      Chat.create({chatId: msg.chat.id, email: emailEntered});
+      bot.sendMessage(msg.chat.id,
+        `
         حجم باقی مانده: ${res.data?.data?.traffic.remaining}
         زمان اتمام: ${res.data?.data?.info?.expire}
         تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
         لینک کانفیگ: ${res.data?.data?.link}`,)
-
-      else
-        bot.sendMessage(msg.chat.id, `ایمیل پیدا نشد`)
-    }).catch((err) => {
+    } else
       bot.sendMessage(msg.chat.id, `ایمیل پیدا نشد`)
-      console.log(err);
-    })
+  }).catch((err) => {
+    bot.sendMessage(msg.chat.id, `ایمیل پیدا نشد`)
+    console.log(err);
+  })
+}
+
+bot.on("message", (msg) => {
+  if (regex.emailRegex.test(msg.text)) {
+    const emailEntered = msg.text;
+    bot.sendMessage(msg.chat.id, `منتظر بمانید...`)
+    requestAccount(emailEntered, msg);
   }
 })
 
@@ -55,6 +60,14 @@ bot.on("polling_error", console.log);
 bot.on("message", (msg) => {
   switch (msg.text) {
     case "وضعیت اکانت":
+      Chat.findOne({chatId: msg.chat.id}, (err, chat) => {
+        if (chat) {
+          bot.sendMessage(msg.chat.id, `منتظر بمانید...`)
+          requestAccount(chat.email, msg);
+        } else {
+          bot.sendMessage(msg.chat.id, `ایمیل خود را وارد کنید`);
+        }
+      })
       bot.sendMessage(msg.chat.id, "  ایمیل خود را وارد کنید ");
       break;
     case "خرید":
