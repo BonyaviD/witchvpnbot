@@ -15,7 +15,7 @@ bot.onText(/\/start/, (msg) => {
     {
       reply_markup: {
         keyboard: [["وضعیت اکانت"],
-        ["پشتیبانی", "آموزش", "خرید"]],
+          ["پشتیبانی", "آموزش", "خرید"]],
         resize_keyboard: true,
       },
     }
@@ -35,19 +35,19 @@ bot.on("message", (msg) => {
     }).then((res) => {
       if (res.data?.data?.traffic?.remaining)
         bot.sendMessage(msg.chat.id,
-        `
+          `
         حجم باقی مانده: ${res.data?.data?.traffic.remaining}
         زمان اتمام: ${res.data?.data?.info?.expire}
         تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
-        لینک کانفیگ: ${res.data?.data?.link}` , )
-      
+        لینک کانفیگ: ${res.data?.data?.link}`,)
+
       else
         bot.sendMessage(msg.chat.id, `ایمیل پیدا نشد`)
     }).catch((err) => {
       bot.sendMessage(msg.chat.id, `ایمیل پیدا نشد`)
       console.log(err);
     })
-  } 
+  }
 })
 
 bot.on("polling_error", console.log);
