@@ -5,7 +5,11 @@ const bot = new TelegramBot(token, {polling: true});
 const consts = require("./consts");
 const regex = require("./utils/regex");
 const Chat = require("./model/chatModel");
+const mongoose = require("mongoose");
 const axios = require("axios");
+
+
+mongoose.connect('mongodb://127.0.0.1:27017/witch');
 
 bot.onText(/\/start/, (msg) => {
 
