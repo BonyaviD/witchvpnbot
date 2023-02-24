@@ -54,10 +54,9 @@ function requestAccount(emailEntered, msg) {
 bot.on("message", (msg) => {
   if (regex.emailRegex.test(msg.text)) {
     const emailEntered = msg.text;
-    bot.sendMessage(msg.chat.id, `منتظر بمانید...`)
     requestAccount(emailEntered, msg);
   }
-})
+});
 
 bot.on("polling_error", console.log);
 
