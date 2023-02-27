@@ -108,7 +108,7 @@ bot.on("message", (msg) => {
       bot.sendMessage(msg.chat.id, "توضیحات ویندوز");
       break;
     case "Android":
-      bot.sendMessage(msg.chat.id, "توضیحات اندروید");
+      bot.sendMessage(msg.chat.id, " https://telegra.ph/Android--v2rayNG-02-27 ");
       break;
     case "بازگشت":
       bot.sendMessage(msg.chat.id, " کاربر " + msg.chat.first_name + " گزینه‌ی مورد نظر را انتخاب کنید ", consts.PANEL_FORM,);
