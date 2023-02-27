@@ -98,15 +98,15 @@ bot.on("message", (msg) => {
         case "ShadowRocket":
           bot.sendMessage(msg.chat.id, " https://telegra.ph/iOS--Shadowrocket-02-27 ");
           break;
-    case "Windows":
+          case "Back":
+            bot.sendMessage(msg.chat.id, "لطفا سیستم عامل خود رو انتخاب کنید", {
+              reply_markup: {
+                keyboard: [["Windows", "Android", "iOS"], ["بازگشت"]], resize_keyboard: true,
+              },
+            });
+          case "Windows":
       bot.sendMessage(msg.chat.id, "توضیحات ویندوز");
       break;
-      case "Back":
-      bot.sendMessage(msg.chat.id, "لطفا سیستم عامل خود رو انتخاب کنید", {
-        reply_markup: {
-          keyboard: [["Windows", "Android", "iOS"], ["بازگشت"]], resize_keyboard: true,
-        },
-      });
     case "Android":
       bot.sendMessage(msg.chat.id, "توضیحات اندروید");
       break;
