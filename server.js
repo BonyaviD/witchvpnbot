@@ -81,14 +81,14 @@ bot.on("message", (msg) => {
     case "آموزش":
       bot.sendMessage(msg.chat.id, "لطفا سیستم عامل خود رو انتخاب کنید", {
         reply_markup: {
-          keyboard: [["Windows", "Android", "iOS"], ["بازگشت"]], resize_keyboard: true,
+          keyboard: [["Windows", "Android", "iOS"], ["بازگشت به پنل"]], resize_keyboard: true,
         },
       });
       break;
     case "iOS":
       bot.sendMessage(msg.chat.id, "برنامه‌ی مورد نظر را انتخاب کنید", {
         reply_markup: {
-          keyboard: [["FairVPN", "ShadowRocket"], ["Back"]], resize_keyboard: true,
+          keyboard: [["FairVPN", "ShadowRocket"], ["بازگشت به سیستم عامل"]], resize_keyboard: true,
         },
       });
       break;
@@ -98,10 +98,10 @@ bot.on("message", (msg) => {
         case "ShadowRocket":
           bot.sendMessage(msg.chat.id, " https://telegra.ph/iOS--Shadowrocket-02-27 ");
           break;
-          case "Back":
+          case "بازگشت به سیستم عامل":
             bot.sendMessage(msg.chat.id, "لطفا سیستم عامل خود رو انتخاب کنید", {
               reply_markup: {
-                keyboard: [["Windows", "Android", "iOS"], ["بازگشت"]], resize_keyboard: true,
+                keyboard: [["Windows", "Android", "iOS"], ["بازگشت به پنل"]], resize_keyboard: true,
               },
             });
           case "Windows":
@@ -110,7 +110,7 @@ bot.on("message", (msg) => {
     case "Android":
       bot.sendMessage(msg.chat.id, " https://telegra.ph/Android--v2rayNG-02-27 ");
       break;
-    case "بازگشت":
+    case "بازگشت به پنل":
       bot.sendMessage(msg.chat.id, " کاربر " + msg.chat.first_name + " گزینه‌ی مورد نظر را انتخاب کنید ", consts.PANEL_FORM,);
       break;
   }
