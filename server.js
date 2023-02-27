@@ -79,18 +79,34 @@ bot.on("message", (msg) => {
       bot.sendMessage(msg.chat.id, "  لینک تلگرام برای پشتیبانی");
       break;
     case "آموزش":
-      bot.sendMessage(msg.chat.id, "لطفا سیستم عام خود رو انتخاب کنید", {
+      bot.sendMessage(msg.chat.id, "لطفا سیستم عامل خود رو انتخاب کنید", {
         reply_markup: {
           keyboard: [["Windows", "Android", "iOS"], ["بازگشت"]], resize_keyboard: true,
         },
       });
       break;
     case "iOS":
-      bot.sendMessage(msg.chat.id, "توضیحات آیفون");
+      bot.sendMessage(msg.chat.id, "برنامه‌ی مورد نظر را انتخاب کنید", {
+        reply_markup: {
+          keyboard: [["FairVPN", "ShadowRocket"], ["Back"]], resize_keyboard: true,
+        },
+      });
       break;
+      case "FairVPN":
+        bot.sendMessage(msg.chat.id, " https://telegra.ph/iOS--Fair-VPN--آموزش-02-27 ");
+        break;
+        case "ShadowRocket":
+          bot.sendMessage(msg.chat.id, " https://telegra.ph/iOS--Shadowrocket-02-27 ");
+          break;
     case "Windows":
       bot.sendMessage(msg.chat.id, "توضیحات ویندوز");
       break;
+      case "Back":
+      bot.sendMessage(msg.chat.id, "لطفا سیستم عامل خود رو انتخاب کنید", {
+        reply_markup: {
+          keyboard: [["Windows", "Android", "iOS"], ["بازگشت"]], resize_keyboard: true,
+        },
+      });
     case "Android":
       bot.sendMessage(msg.chat.id, "توضیحات اندروید");
       break;
