@@ -73,7 +73,7 @@ bot.on("message", (msg) => {
       })
       break;
     case "خرید":
-      bot.sendMessage(msg.chat.id, "  لینک خرید  ");
+      bot.sendMessage(msg.chat.id, "  این سرویس فعال نمی‌باشد ");
       break;
     case "پشتیبانی":
       bot.sendMessage(msg.chat.id, "  لینک تلگرام برای پشتیبانی");
