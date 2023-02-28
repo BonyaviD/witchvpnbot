@@ -73,10 +73,10 @@ bot.on("message", (msg) => {
       })
       break;
     case "خرید":
-      bot.sendMessage(msg.chat.id, "  این سرویس فعال نمی‌باشد ");
+      bot.sendMessage(msg.chat.id, "... این سرویس در حال حاضر فعال نمی‌باشد ");
       break;
     case "پشتیبانی":
-      bot.sendMessage(msg.chat.id, "  لینک تلگرام برای پشتیبانی");
+      bot.sendMessage(msg.chat.id, " برای پشتیبانی و اطلاعات بیشتر وارد کانال https://t.me/Witch_Net شوید ");
       break;
     case "آموزش":
       bot.sendMessage(msg.chat.id, "لطفا سیستم عامل خود رو انتخاب کنید", {
