@@ -104,6 +104,7 @@ bot.on("message", (msg) => {
                 keyboard: [["Windows", "Android", "iOS"], ["بازگشت به پنل"]], resize_keyboard: true,
               },
             });
+            break;
           case "Windows":
       bot.sendMessage(msg.chat.id, "توضیحات ویندوز");
       break;
