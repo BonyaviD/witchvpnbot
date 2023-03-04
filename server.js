@@ -78,7 +78,9 @@ bot.on("message", (msg) => {
     case "پشتیبانی":
       bot.sendMessage(msg.chat.id, ` 
       برای پشتیبانی و اطلاعات بیشتر به کانال ویچ وی‌پی‌ان سربزنید
-      https://t.me/Witch_Net
+
+      @Witch_Net
+    
       ` );
       break;
     case "آموزش":
