@@ -76,7 +76,10 @@ bot.on("message", (msg) => {
       bot.sendMessage(msg.chat.id, " این سرویس در حال حاضر فعال نمی‌باشد ...");
       break;
     case "پشتیبانی":
-      bot.sendMessage(msg.chat.id, " برای پشتیبانی و اطلاعات بیشتر وارد کانال شوید " , "https://t.me/Witch_Net");
+      bot.sendMessage(msg.chat.id, ` 
+      برای پشتیبانی و اطلاعات بیشتر به کانال ویچ وی‌پی‌ان سربزنید
+      https://t.me/Witch_Net
+      ` );
       break;
     case "آموزش":
       bot.sendMessage(msg.chat.id, "لطفا سیستم عامل خود رو انتخاب کنید", {
