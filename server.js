@@ -73,7 +73,7 @@ bot.on("message", (msg) => {
       })
       break;
     case "خرید":
-      bot.sendMessage(msg.chat.id, "... این سرویس در حال حاضر فعال نمی‌باشد ");
+      bot.sendMessage(msg.chat.id, " این سرویس در حال حاضر فعال نمی‌باشد ...");
       break;
     case "پشتیبانی":
       bot.sendMessage(msg.chat.id, " برای پشتیبانی و اطلاعات بیشتر وارد کانال https://t.me/Witch_Net شوید ");
