@@ -106,7 +106,7 @@ bot.on("message", (msg) => {
             });
             break;
           case "Windows":
-      bot.sendMessage(msg.chat.id, "توضیحات ویندوز");
+      bot.sendMessage(msg.chat.id, " https://telegra.ph/Windows--v2ray-03-04 ");
       break;
     case "Android":
       bot.sendMessage(msg.chat.id, " https://telegra.ph/Android--v2rayNG-02-27 ");
