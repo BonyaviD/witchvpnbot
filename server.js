@@ -42,7 +42,8 @@ function requestAccount(emailEntered, msg) {
         حجم باقی مانده: ${res.data?.data?.traffic.remaining}
         زمان اتمام: ${res.data?.data?.info?.expire}
         تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
-        لینک کانفیگ: ${res.data?.data?.link}`,)
+        لینک کانفیگ: ${res.data?.data?.link}
+        لینک کانفیگ 2: ${res.data?.data?.server}`,)
     } else
       bot.sendMessage(msg.chat.id, `ایمیل پیدا نشد`)
   }).catch((err) => {
