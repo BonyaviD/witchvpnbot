@@ -68,7 +68,7 @@ bot.on("message", (msg) => {
           bot.sendMessage(msg.chat.id, `منتظر بمانید...`)
           requestAccount(chat.email, msg);
         } else {
-          bot.sendMessage(msg.chat.id, `ایمیل خود را وارد کنید`);
+          bot.sendMessage(msg.chat.id, `یوزر خود را وارد کنید`);
         }
       })
       break;
