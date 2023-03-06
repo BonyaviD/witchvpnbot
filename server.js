@@ -39,13 +39,14 @@ function requestAccount(emailEntered, msg) {
       Chat.create({chatId: msg.chat.id, email: emailEntered});
       bot.sendMessage(msg.chat.id,
         ` 
-        A
+        🎩
         حجم کل: ${res.data?.data?.traffic.total}
         حجم مصرف شده: ${res.data?.data?.traffic.used}
         حجم باقی مانده: ${res.data?.data?.traffic.remaining}
         زمان اتمام: ${res.data?.data?.info?.expire}
         تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
-        لینک کانفیگ: ${res.data?.data?.link} `,)
+        لینک کانفیگ:
+         ${res.data?.data?.link} `,)
     } else
       bot.sendMessage(msg.chat.id, `ایمیل پیدا نشد`)
   }).catch((err) => {
