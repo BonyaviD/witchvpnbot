@@ -38,7 +38,8 @@ function requestAccount(emailEntered, msg) {
     if (res.data?.data?.traffic?.remaining) {
       Chat.create({chatId: msg.chat.id, email: emailEntered});
       bot.sendMessage(msg.chat.id,
-        `
+        ` 
+        A
         حجم کل: ${res.data?.data?.traffic.total}
         حجم مصرف شده: ${res.data?.data?.traffic.used}
         حجم باقی مانده: ${res.data?.data?.traffic.remaining}
