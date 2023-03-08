@@ -49,9 +49,9 @@ function requestAccount(emailEntered, msg) {
         ${res.data?.data?.link}
           `,)
     } else
-      bot.sendMessage(msg.chat.id, `یوزر با این نام پیدا نشد`)
+      bot.sendMessage(msg.chat.id, `یوزری با این نام پیدا نشد`)
   }).catch((err) => {
-    bot.sendMessage(msg.chat.id, `یوزر با این نام پیدا نشد`)
+    bot.sendMessage(msg.chat.id, `یوزری با این نام پیدا نشد`)
     console.log(err);
   })
 }
@@ -78,7 +78,7 @@ bot.on("message", (msg) => {
       })
       break;
     case "خرید":
-    bot.send_message(msg.chat.id=update.message.chat.id, text="<a href='https://www.google.com/'>Google</a>",parse_mode=ParseMode.HTML)  
+    bot.sendmessage(msg.chat.id=update.message.chat.id, text="<a href='https://www.google.com/'>Google</a>",parse_mode=ParseMode.HTML)  
     //bot.sendMessage(msg.chat.id, " این سرویس در حال حاضر فعال نمی‌باشد ...");
       break;
     case "پشتیبانی":
