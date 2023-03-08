@@ -88,9 +88,11 @@ bot.on("message", (msg) => {
       bot.sendMessage(msg.chat.id, " این سرویس در حال حاضر فعال نمی‌باشد ...");
       break;
     case "پشتیبانی":
-      bot.sendMessage(msg.chat.id,`
+      bot.sendMessage(msg.chat.id,
+        `
       برای پشتیبانی و اطلاعات بیشتر به <a href='https://t.me/Witch_Net'>کانال ویچ</a> وی‌پی‌ان سربزنید
-    ` ,{parse_mode:"HTML"});
+    `, { parse_mode: "HTML" }
+      );
       break;
     case "آموزش":
       bot.sendMessage(msg.chat.id, "لطفا سیستم عامل خود رو انتخاب کنید", {
@@ -109,16 +111,10 @@ bot.on("message", (msg) => {
       });
       break;
     case "FairVPN":
-      bot.sendMessage(
-        msg.chat.id,
-        " https://telegra.ph/iOS--Fair-VPN--آموزش-02-27 "
-      );
+      bot.sendMessage(msg.chat.id," https://telegra.ph/iOS--Fair-VPN--آموزش-02-27 ");
       break;
     case "ShadowRocket":
-      bot.sendMessage(
-        msg.chat.id,
-        " https://telegra.ph/iOS--Shadowrocket-02-27 "
-      );
+      bot.sendMessage(msg.chat.id," https://telegra.ph/iOS--Shadowrocket-02-27 ");
       break;
     case "بازگشت به سیستم عامل":
       bot.sendMessage(msg.chat.id, "لطفا سیستم عامل خود رو انتخاب کنید", {
@@ -129,20 +125,13 @@ bot.on("message", (msg) => {
       });
       break;
     case "Windows":
-      bot.sendMessage(msg.chat.id, " https://telegra.ph/Windows--v2ray-03-04 ");
+      bot.sendMessage(msg.chat.id," https://telegra.ph/Windows--v2ray-03-04 ");
       break;
     case "Android":
-      bot.sendMessage(
-        msg.chat.id,
-        " https://telegra.ph/Android--v2rayNG-02-27 "
-      );
+      bot.sendMessage(msg.chat.id," https://telegra.ph/Android--v2rayNG-02-27 ");
       break;
     case "بازگشت به پنل":
-      bot.sendMessage(
-        msg.chat.id,
-        " کاربر " + msg.chat.first_name + " گزینه‌ی مورد نظر را انتخاب کنید ",
-        consts.PANEL_FORM
-      );
+      bot.sendMessage(msg.chat.id," کاربر " + msg.chat.first_name + " گزینه‌ی مورد نظر را انتخاب کنید ",consts.PANEL_FORM);
       break;
   }
 });
