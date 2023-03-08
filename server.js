@@ -49,7 +49,7 @@ function requestAccount(emailEntered, msg) {
         حجم باقی مانده: ${res.data?.data?.traffic.remaining}
         زمان اتمام: ${res.data?.data?.info?.expire}
         تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
-        <b>سابسکریپشن کانفیگ:</> <a href="${res.data?.data?.link}"><b>Link</b></a>
+        <b>لینک سابسکریپشن:</b><a href="${res.data?.data?.link}"><b>Link</b></a>
         🎩
         <b>لینک مستقیم کانقیگ:</b>
         <b>Germany:</b>
@@ -60,7 +60,7 @@ function requestAccount(emailEntered, msg) {
         <b>Netherlands:</b>
         <a href="https://www.google.com/">[Witch-VPN] Zeist, Netherlands (TCP)</a>
         <a href="https://www.google.com/">[Witch-VPN] Zeist, Netherlands (WS-TLS)</a>
-        <b>Funland:</b>
+        <b>Finland:</b>
         <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (WS-TLS)</a>
         <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (WS-TLS)</a>
         <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (TCP)</a>
