@@ -49,9 +49,9 @@ function requestAccount(emailEntered, msg) {
         حجم باقی مانده: ${res.data?.data?.traffic.remaining}
         زمان اتمام: ${res.data?.data?.info?.expire}
         تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
-        <b>لینک سابسکریپشن:</b><a href="${res.data?.data?.link}"><b>Link</b></a>
-        🎩
-        <b>لینک مستقیم کانقیگ:</b>
+        لینک سابسکریپشن:<a href="${res.data?.data?.link}"><b> Subscription Config </b></a>
+        
+        <b>لینک مستقیم کانفیگ:</b>
         <b>Germany:</b>
         <a href="https://www.google.com/">[Witch-VPN] Limburg, Germany (TCP)</a>
         <a href="https://www.google.com/">[Witch-VPN] Limburg, Germany (WS-TLS)</a>
