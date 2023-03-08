@@ -50,9 +50,17 @@ function requestAccount(emailEntered, msg) {
         زمان اتمام: ${res.data?.data?.info?.expire}
         تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
         لینک کانفیگ: <a href="${res.data?.data?.link}">config link</a>
+        -
         لینک نپسترنت: 
-        <a href="https://www.google.com/">finland</a> <a href="https://www.google.com/">germany</a>
-        <a href="https://www.google.com/">server 1</a> <a href="https://www.google.com/">server 2</a>
+        <a href="https://www.google.com/">[Witch-VPN] Limburg, Germany (TCP)</a>
+        <a href="https://www.google.com/">[Witch-VPN] Limburg, Germany (WS-TLS)</a>
+        <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (WS-TLS)</a>
+        <a href="https://www.google.com/">MTN-Irancell</a>
+        <a href="https://www.google.com/">[Witch-VPN] Zeist, Netherlands (TCP)</a>
+        <a href="https://www.google.com/">[Witch-VPN] Zeist, Netherlands (WS-TLS)</a>
+        <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (WS-TLS)</a>
+        <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (TCP)</a>
+        <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (gRPC-TLS)</a>
         `,
           { parse_mode: "HTML" }
         );
