@@ -45,8 +45,8 @@ function requestAccount(emailEntered, msg) {
         حجم باقی مانده: ${res.data?.data?.traffic.remaining}
         زمان اتمام: ${res.data?.data?.info?.expire}
         تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
-        لینک کانفیگ:
-         ${res.data?.data?.link} `,)
+        لینک کانفیگ: <a href=\"${res.data?.data?.link}">here</a>
+          `,)
     } else
       bot.sendMessage(msg.chat.id, `یوزر با این نام پیدا نشد`)
   }).catch((err) => {
