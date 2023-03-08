@@ -90,7 +90,7 @@ bot.on("message", (msg) => {
     case "پشتیبانی":
       bot.sendMessage(msg.chat.id,`
       برای پشتیبانی و اطلاعات بیشتر به <a href='https://t.me/Witch_Net'>کانال ویچ</a> وی‌پی‌ان سربزنید
-    `);
+    ` {parse_mode:"HTML"});
       break;
     case "آموزش":
       bot.sendMessage(msg.chat.id, "لطفا سیستم عامل خود رو انتخاب کنید", {
