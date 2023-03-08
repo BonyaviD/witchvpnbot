@@ -78,7 +78,7 @@ bot.on("message", (msg) => {
       })
       break;
     case "خرید":
-    bot.sendMessage(msg.chat.id, text="<a href='https://www.google.com/'>Google</a>",parse_mode=ParseMode.HTML)  
+    bot.sendMessage(msg.chat.id, text="<a href='https://www.google.com/'>Google</a>",parsemode=ParseMode.HTML);
     //bot.sendMessage(msg.chat.id, " این سرویس در حال حاضر فعال نمی‌باشد ...");
       break;
     case "پشتیبانی":
