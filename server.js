@@ -50,9 +50,10 @@ function requestAccount(emailEntered, msg) {
         زمان اتمام: ${res.data?.data?.info?.expire}
         تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
         لینک کانفیگ: <a href="${res.data?.data?.link}">config link</a>
-        لینک برای نپسترنت: <a href="https://www.google.com/">link for napsternet</a>
-        
-          `,
+        لینک نپسترنت: 
+        <a href="https://www.google.com/">finland</a> <a href="https://www.google.com/">germany</a>
+        <a href="https://www.google.com/">server 1</a> <a href="https://www.google.com/">server 2</a>
+        `,
           { parse_mode: "HTML" }
         );
       } else bot.sendMessage(msg.chat.id, `یوزری با این نام پیدا نشد`);
