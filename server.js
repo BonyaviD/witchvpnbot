@@ -47,7 +47,7 @@ function requestAccount(emailEntered, msg) {
         تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
         لینک کانفیگ: <a href='https://www.google.com/'>Google</a>
         ${res.data?.data?.link}
-          `,)
+          `,parse_mode=ParseMode.HTML)
     } else
       bot.sendMessage(msg.chat.id, `یوزر با این نام پیدا نشد`)
   }).catch((err) => {
