@@ -48,9 +48,9 @@ function requestAccount(emailEntered, msg) {
         لینک کانفیگ:
          ${res.data?.data?.link} `,)
     } else
-      bot.sendMessage(msg.chat.id, `ایمیل پیدا نشد`)
+      bot.sendMessage(msg.chat.id, `یوزر با این نام پیدا نشد`)
   }).catch((err) => {
-    bot.sendMessage(msg.chat.id, `ایمیل پیدا نشد`)
+    bot.sendMessage(msg.chat.id, `یوزر با این نام پیدا نشد`)
     console.log(err);
   })
 }
