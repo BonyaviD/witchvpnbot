@@ -37,7 +37,7 @@ function requestAccount(emailEntered, msg) {
   }).then((res) => {
     if (res.data?.data?.traffic?.remaining) {
       Chat.create({chatId: msg.chat.id, email: emailEntered});
-      bot.sendMessage(msg.chat.id=update.message.msg.chat.id, Text=
+      bot.sendMessage(msg.chat.id,
         ` 
         🎩
         حجم کل: ${res.data?.data?.traffic.total}
@@ -45,9 +45,9 @@ function requestAccount(emailEntered, msg) {
         حجم باقی مانده: ${res.data?.data?.traffic.remaining}
         زمان اتمام: ${res.data?.data?.info?.expire}
         تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
-        لینک کانفیگ: <a href='${res.data?.data?.link}'>here</a>
-        
-          `, ParseMode=ParseMode.HTML)
+        لینک کانفیگ: <a href='https://www.google.com/'>Google</a>
+        ${res.data?.data?.link}
+          `,ParseMode=ParseMode.HTML)
     } else
       bot.sendMessage(msg.chat.id, `یوزر با این نام پیدا نشد`)
   }).catch((err) => {
