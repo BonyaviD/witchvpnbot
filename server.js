@@ -45,9 +45,9 @@ function requestAccount(emailEntered, msg) {
         حجم باقی مانده: ${res.data?.data?.traffic.remaining}
         زمان اتمام: ${res.data?.data?.info?.expire}
         تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
-        لینک کانفیگ: 
+        لینک کانفیگ: <a href="http://www.example.com/">inline URL</a>
         ${res.data?.data?.link}
-          `,)
+          `, {parse_mode:"HTML"})
     } else
       bot.sendMessage(msg.chat.id, `یوزری با این نام پیدا نشد`)
   }).catch((err) => {
@@ -78,7 +78,7 @@ bot.on("message", (msg) => {
       })
       break;
     case "خرید":
-    bot.sendMessage(msg.chat.id, text="<a href='https://www.google.com/'>Google</a>",parsemode=ParseMode.HTML);
+    bot.sendMessage(msg.chat.id, text="<a href='https://www.google.com/'>Google</a>", {parse_mode:"HTML"});
     //bot.sendMessage(msg.chat.id, " این سرویس در حال حاضر فعال نمی‌باشد ...");
       break;
     case "پشتیبانی":
