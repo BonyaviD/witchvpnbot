@@ -66,7 +66,6 @@ function requestAccount(emailEntered, msg) {
         <a href="https://www.google.com/">[Witch-VPN] Zeist, Netherlands (WS-TLS)</a>
         🇫🇮<b>Finland:</b>
         <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (WS-TLS)</a>
-        <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (WS-TLS)</a>
         <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (TCP)</a>
         <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (gRPC-TLS)</a>
         `,
