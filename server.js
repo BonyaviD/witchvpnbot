@@ -44,15 +44,19 @@ function requestAccount(emailEntered, msg) {
           msg.chat.id,
           ` 
         🎩
-        حجم کل: ${res.data?.data?.traffic.total}
-        حجم مصرف شده: ${res.data?.data?.traffic.used}
-        حجم باقی مانده: ${res.data?.data?.traffic.remaining}
-        زمان اتمام: ${res.data?.data?.info?.expire}
-        تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
-        لینک سابسکریپشن:<a href="${res.data?.data?.link}"><b> Subscription Config </b></a>
-        
-        <b>لینک مستقیم کانفیگ:</b>
-        <b>Germany:</b>
+        ⚪️حجم کل: ${res.data?.data?.traffic.total} گیگابایت
+        🟠حجم مصرف شده: ${res.data?.data?.traffic.used} گیگابایت
+        🟢حجم باقی مانده: ${res.data?.data?.traffic.remaining} گیگابایت
+        -----------------
+        🕐زمان اتمام: ${res.data?.data?.info?.expire}
+        -----------------
+        👥تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
+        --------------------
+        🔗 لینک اتصال - گروهی (Subscription):
+        <a href="${res.data?.data?.link}"><b> Subscription Link </b></a>
+        ----------------------------
+        🔗 لینک اتصال - سرورها:
+        🇩🇪<b>Germany:</b>
         <a href="https://www.google.com/">[Witch-VPN] Limburg, Germany (TCP)</a>
         <a href="https://www.google.com/">[Witch-VPN] Limburg, Germany (WS-TLS)</a>
         <b>MTN-Irancell:</b>
@@ -60,7 +64,7 @@ function requestAccount(emailEntered, msg) {
         <b>Netherlands:</b>
         <a href="https://www.google.com/">[Witch-VPN] Zeist, Netherlands (TCP)</a>
         <a href="https://www.google.com/">[Witch-VPN] Zeist, Netherlands (WS-TLS)</a>
-        <b>Finland:</b>
+        🇫🇮<b>Finland:</b>
         <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (WS-TLS)</a>
         <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (WS-TLS)</a>
         <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (TCP)</a>
