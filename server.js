@@ -47,21 +47,21 @@ function requestAccount(emailEntered, msg) {
         ⚪️حجم کل: ${res.data?.data?.traffic.total} گیگابایت
         🟠حجم مصرف شده: ${res.data?.data?.traffic.used} گیگابایت
         🟢حجم باقی مانده: ${res.data?.data?.traffic.remaining} گیگابایت
-        -----------------
+        ---------------------------------------
         🕐زمان اتمام: ${res.data?.data?.info?.expire}
-        -----------------
+        ---------------------------------------
         👥تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
-        --------------------
+        ---------------------------------------
         🔗 لینک اتصال - گروهی (Subscription):
         <a href="${res.data?.data?.link}"><b> Subscription Link </b></a>
-        ----------------------------
+        ---------------------------------------
         🔗 لینک اتصال - سرورها:
         🇩🇪<b>Germany:</b>
         <a href="https://www.google.com/">[Witch-VPN] Limburg, Germany (TCP)</a>
         <a href="https://www.google.com/">[Witch-VPN] Limburg, Germany (WS-TLS)</a>
-        <b>MTN-Irancell:</b>
+        🏳️<b>MTN-Irancell:</b>
         <a href="https://www.google.com/">MTN-Irancell</a>
-        <b>Netherlands:</b>
+        🇳🇱<b>Netherlands:</b>
         <a href="https://www.google.com/">[Witch-VPN] Zeist, Netherlands (TCP)</a>
         <a href="https://www.google.com/">[Witch-VPN] Zeist, Netherlands (WS-TLS)</a>
         🇫🇮<b>Finland:</b>
