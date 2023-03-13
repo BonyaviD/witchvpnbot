@@ -26,7 +26,7 @@ bot.onText(/\/start/, (msg) => {
 function requestAccount(emailEntered, msg) {
   axios
     .post(
-      "https://witch.gndn.cf/api/v2/account",
+      "https://witch.gndn.cf/api/v2/client/token",
       {
         email: emailEntered,
         passwd: process.env.USER_PASSWORD,
@@ -38,38 +38,14 @@ function requestAccount(emailEntered, msg) {
       }
     )
     .then((res) => {
-      if (res.data?.data?.traffic?.remaining) {
+      if (res.data?.data?.token) {
         Chat.create({ chatId: msg.chat.id, email: emailEntered });
         bot.sendMessage(
           msg.chat.id,
           ` 
-        🎩
-        ⚪️حجم کل: ${res.data?.data?.traffic.total} گیگابایت
-        🟠حجم مصرف شده: ${res.data?.data?.traffic.used} گیگابایت
-        🟢حجم باقی مانده: ${res.data?.data?.traffic.remaining} گیگابایت
-        ---------------------------------------
-        🕐زمان اتمام: ${res.data?.data?.info?.expire}
-        ---------------------------------------
-        👥تعداد کاربران فعال: ${res.data?.data?.info?.onlineip}
-        ---------------------------------------
-        🔗 لینک اتصال - گروهی (Subscription):
-        <a href="${res.data?.data?.link}"><b> Subscription Link </b></a>
-        ---------------------------------------
-        🔗 لینک اتصال - سرورها:
-        🇩🇪<b>Germany:</b>
-        <a href="https://www.google.com/">[Witch-VPN] Limburg, Germany (TCP)</a>
-        <a href="https://www.google.com/">[Witch-VPN] Limburg, Germany (WS-TLS)</a>
-        🏳️<b>MTN-Irancell:</b>
-        <a href="https://www.google.com/">MTN-Irancell</a>
-        🇳🇱<b>Netherlands:</b>
-        <a href="https://www.google.com/">[Witch-VPN] Zeist, Netherlands (TCP)</a>
-        <a href="https://www.google.com/">[Witch-VPN] Zeist, Netherlands (WS-TLS)</a>
-        🇫🇮<b>Finland:</b>
-        <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (WS-TLS)</a>
-        <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (TCP)</a>
-        <a href="https://www.google.com/">[Witch-VPN] Helsinki, Finland (gRPC-TLS)</a>
+        token: ${res.data?.data?.token}
         `,
-          { parse_mode: "HTML" }
+          //{ parse_mode: "HTML" }
         );
       } else bot.sendMessage(msg.chat.id, `یوزری با این نام پیدا نشد`);
     })
