@@ -26,10 +26,9 @@ bot.onText(/\/start/, (msg) => {
 function requestAccount(emailEntered, msg) {
   axios
     .post(
-      "https://witch.gndn.cf/api/v2/client/token",
+      "https://witch.gndn.cf/api/v2/client/stats",
       {
-        email: emailEntered,
-        passwd: process.env.USER_PASSWORD,
+        "token" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3dpdGNoLmduZG4uY2YiLCJhdWQiOiJodHRwczovL3dpdGNoLmduZG4uY2YiLCJpYXQiOjE2Nzg3MjY2MzIsImV4cCI6MTY3ODg5OTQzMiwiZW1haWwiOiJWYWhpZEB1c2Vycy5jb20ifQ.dSUFRvUGt3p32O3lN1XA3t3ZtWXJFzVougJepBxUIjI",
       },
       {
         headers: {
@@ -38,12 +37,17 @@ function requestAccount(emailEntered, msg) {
       }
     )
     .then((res) => {
-      if (res.data?.data?.token) {
+      if (res.data?.data?.remaining) {
         Chat.create({ chatId: msg.chat.id, email: emailEntered });
         bot.sendMessage(
           msg.chat.id,
           ` 
-        token: ${res.data?.data?.token}
+        ${res.data?.data?.info?.onlineip}
+        ${res.data?.data?.info?.expire_at}
+        ${res.data?.data?.data?.remaining}
+        ${res.data?.data?.data?.used}
+        ${res.data?.data?.data?.total}
+        ${res.data?.data?.sublink}
         `,
           //{ parse_mode: "HTML" }
         );
