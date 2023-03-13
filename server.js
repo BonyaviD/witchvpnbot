@@ -25,7 +25,7 @@ bot.onText(/\/start/, (msg) => {
 
 function requestAccount(emailEntered, msg) {
   axios.post(
-    "https://witch.gndn.cf/api/v2/client/stats",
+    "https://witch.gndn.cf/api/v2/client/servers",
       {
         "token" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3dpdGNoLmduZG4uY2YiLCJhdWQiOiJodHRwczovL3dpdGNoLmduZG4uY2YiLCJpYXQiOjE2Nzg3MjY2MzIsImV4cCI6MTY3ODg5OTQzMiwiZW1haWwiOiJWYWhpZEB1c2Vycy5jb20ifQ.dSUFRvUGt3p32O3lN1XA3t3ZtWXJFzVougJepBxUIjI",
       },
@@ -47,7 +47,8 @@ function requestAccount(emailEntered, msg) {
         ${res.data?.data?.used}
         ${res.data?.data?.total}
         ${res.data?.sublink}
-        ${res.data?.servers?.uri}
+        ${res.data?.servers?.uri[0]}
+        ${res.data?.servers?.uri[1]}
         `,
           //{ parse_mode: "HTML" }
         );
