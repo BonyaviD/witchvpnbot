@@ -25,7 +25,7 @@ bot.onText(/\/start/, (msg) => {
 
 function requestAccount(emailEntered, msg) {
   axios.post(
-    "https://witch.gndn.cf/api/v2/client/servers",
+    "https://witch.gndn.cf/api/v2/client/stats",
       {
         "token" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3dpdGNoLmduZG4uY2YiLCJhdWQiOiJodHRwczovL3dpdGNoLmduZG4uY2YiLCJpYXQiOjE2Nzg3MjY2MzIsImV4cCI6MTY3ODg5OTQzMiwiZW1haWwiOiJWYWhpZEB1c2Vycy5jb20ifQ.dSUFRvUGt3p32O3lN1XA3t3ZtWXJFzVougJepBxUIjI",
       },
@@ -36,7 +36,7 @@ function requestAccount(emailEntered, msg) {
       }
     )
     .then((res) => {
-      if (res.data?.servers?.uri) {
+      if (res.data?.data?.remaining) {
         Chat.create({ chatId: msg.chat.id, email: emailEntered });
         bot.sendMessage(
           msg.chat.id,
