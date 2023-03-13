@@ -37,7 +37,7 @@ function requestAccount(emailEntered, msg) {
       }
     )
     .then((res) => {
-      if (res.data?.data?.remaining, res.data?.servers?.uri) {
+      if (res.data?.data?.remaining) {
         Chat.create({ chatId: msg.chat.id, email: emailEntered });
         bot.sendMessage(
           msg.chat.id,
