@@ -42,12 +42,12 @@ function requestAccount(emailEntered, msg) {
         bot.sendMessage(
           msg.chat.id,
           ` 
-        ${res.data?.data?.info?.onlineip}
-        ${res.data?.data?.info?.expire_at}
-        ${res.data?.data?.data?.remaining}
-        ${res.data?.data?.data?.used}
-        ${res.data?.data?.data?.total}
-        ${res.data?.data?.sublink}
+        ${res.data?.info?.onlineip}
+        ${res.data?.info?.expire_at}
+        ${res.data?.data?.remaining}
+        ${res.data?.data?.used}
+        ${res.data?.data?.total}
+        ${res.data?.sublink}
         `,
           //{ parse_mode: "HTML" }
         );
